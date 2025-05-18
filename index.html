@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cadiumdev.com</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+
+      body {
+        /* Remove background from body */
+        min-height: 100vh;
+        min-width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-family: sans-serif;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: url("background.jpg") no-repeat center center fixed;
+        background-size: cover;
+        opacity: 0;
+        transition: opacity 2.5s ease;
+        z-index: -1;
+      }
+
+      body.bg-fade-in::before {
+        opacity: 1;
+      }
+
+      .fade-in-bg {
+        min-height: 100vh;
+        min-width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: inherit;
+        opacity: 0;
+        transition: opacity 2.5s ease;
+      }
+
+      a {
+        color: white;
+        font-size: 0.7rem;
+        opacity: 0.4;
+        position: fixed;
+        bottom: 10px;
+        right: 16px;
+        margin-top: 0;
+        text-decoration: underline;
+        z-index: 10;
+        transition: opacity 0.2s;
+      }
+      a:hover {
+        opacity: 0.8;
+      }
+    </style>
+  </head>
+  <body onload="document.body.classList.add('bg-fade-in'); document.querySelector('.fade-in-bg').style.opacity = 1;">
+    <div class="fade-in-bg">
+      <h1>cadiumdev.com</h1>
+      <a href="https://pngtree.com/freebackground/abstract-technology-background-technical-electric_1252603.html" target="_blank" rel="noopener noreferrer">
+        free background photos from pngtree.com
+      </a>
+    </div>
+  </body>
+</html>
